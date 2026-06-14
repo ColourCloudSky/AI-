@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>彩云译设计 - 个人设计作品集</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Lucide Icons for clean, professional icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            DEFAULT: '#2F80ED', // 提取自您Logo的蓝色
+                            dark: '#1C52A3',
+                            bg: '#08090C'       // 极深色底色，专业克制
+                        },
+                        zinc: {
+                            950: '#09090b',
+                            900: '#18181b',
+                            800: '#27272a',
+                            400: '#a1a1aa',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'SF Pro Display', '-apple-system', 'BlinkMacSystemFont', 'PingFang SC', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* 隐藏滚动条但保留功能 */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body class="bg-brand-bg text-zinc-100 font-sans antialiased selection:bg-brand selection:text-white">
+
+    <!-- 1. 顶部固定导航栏 -->
+    <header class="fixed top-0 left-0 w-full z-50 bg-brand-bg/85 backdrop-blur-md border-b border-zinc-900/50 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <!-- Left: Logo -->
+            <a href="#" class="flex items-center gap-3 group">
+                <!-- 模拟您上传的Logo图标样式 -->
+                <div class="w-9 h-9 bg-brand rounded-lg flex items-center justify-center shadow-lg shadow-brand/20 group-hover:scale-105 transition-transform duration-300">
+                    <span class="text-white font-extrabold text-xl italic tracking-tighter" style="font-family: 'Arial', sans-serif;">D</span>
+                </div>
+                <span class="text-lg font-semibold tracking-wider text-zinc-100 group-hover:text-brand transition-colors duration-300">彩云译设计</span>
+            </a>
+
+            <!-- Middle: Navigation Items -->
+            <nav class="hidden md:flex items-center gap-10">
+                <a href="#portfolio" class="text-sm font-medium text-zinc-100 hover:text-brand transition-colors duration-200">作品集</a>
+                <a href="#methodology" class="text-sm font-medium text-zinc-400 hover:text-brand transition-colors duration-200">方法论</a>
+                <a href="#resources" class="text-sm font-medium text-zinc-400 hover:text-brand transition-colors duration-200">资源</a>
+                <a href="#about" class="text-sm font-medium text-zinc-400 hover:text-brand transition-colors duration-200">关于我</a>
+            </nav>
+
+            <!-- Right: Contact CTA -->
+            <div>
+                <a href="#contact" class="inline-flex items-center justify-center px-5 py-2.5 rounded-full text-xs font-semibold bg-brand hover:bg-brand-dark text-white shadow-lg shadow-brand/10 hover:shadow-brand/25 transition-all duration-300">
+                    联系我
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- 2. Hero 区域 (占首屏 60-70% 高度) -->
+    <section class="relative min-h-[75vh] flex items-center pt-24 overflow-hidden">
+        <!-- 背景视觉主图（采用高质量抽象暗色流体作为视觉主体，并进行适度弱化，避免干扰文本） -->
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1600&q=80" 
+                 alt="Visual Main Image" 
+                 class="w-full h-full object-cover opacity-20 filter saturate-[0.8] blur-[2px]" />
+            <div class="absolute inset-0 bg-gradient-to-t from-brand-bg via-brand-bg/80 to-transparent"></div>
+            <div class="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.01)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.01)_1px,transparent_1px)] bg-[size:4rem_4rem]"></div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-6 w-full relative z-10 py-16">
+            <div class="max-w-3xl">
+                <!-- 个人身份信息 -->
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-zinc-900/80 border border-zinc-800 text-xs text-zinc-400 mb-6 backdrop-blur-sm">
+                    <span class="w-2 h-2 rounded-full bg-brand animate-pulse"></span>
+                    <span>上海 · 资深产品设计师</span>
+                </div>
+                <!-- 一句话职业定位 -->
+                <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-white leading-[1.15] mb-8">
+                    用逻辑构建秩序，<br>
+                    用设计链接<span class="text-transparent bg-clip-text bg-gradient-to-r from-brand to-cyan-400">产品与商业价值</span>。
+                </h1>
+                <p class="text-base sm:text-lg text-zinc-400 font-light leading-relaxed mb-10 max-w-xl">
+                    我是彩云，专注于数字化产品体验设计。坚持内容优先的设计原则，在克制中寻找视觉冲击力，为复杂业务提供优雅的解法。
+                </p>
+                <div class="flex items-center gap-4">
+                    <a href="#portfolio" class="inline-flex items-center gap-2 text-sm font-medium text-white hover:text-brand transition-colors group">
+                        浏览精选作品 
+                        <i data-lucide="arrow-right" class="w-4 h-4 transform group-hover:translate-x-1 transition-transform"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. 能力标签导航 -->
+    <section class="border-y border-zinc-900 bg-brand-bg/80 sticky top-20 z-40 backdrop-blur-md">
+        <div class="max-w-7xl mx-auto px-6 py-5">
+            <div class="flex items-center justify-start md:justify-center gap-2 overflow-x-auto no-scrollbar py-1">
+                <button class="px-5 py-2 rounded-full text-xs font-medium bg-brand text-white transition-all duration-300 whitespace-nowrap">
+                    全部精选
+                </button>
+                <button class="px-5 py-2 rounded-full text-xs font-medium bg-zinc-900 hover:bg-zinc-800 text-zinc-400 hover:text-zinc-200 transition-all duration-300 whitespace-nowrap">
+                    UI/UX 设计
+                </button>
+                <button class="px-5 py-2 rounded-full text-xs font-medium bg-zinc-900 hover:bg-zinc-800 text-zinc-400 hover:text-zinc-200 transition-all duration-300 whitespace-nowrap">
+                    动效设计
+                </button>
+                <button class="px-5 py-2 rounded-full text-xs font-medium bg-zinc-900 hover:bg-zinc-800 text-zinc-400 hover:text-zinc-200 transition-all duration-300 whitespace-nowrap">
+                    3D 视觉设计
+                </button>
+                <button class="px-5 py-2 rounded-full text-xs font-medium bg-zinc-900 hover:bg-zinc-800 text-zinc-400 hover:text-zinc-200 transition-all duration-300 whitespace-nowrap">
+                    品牌视觉设计
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. 精选作品网格 (高清晰度UI案例注入) -->
+    <section id="portfolio" class="py-24 max-w-7xl mx-auto px-6">
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-4">
+            <div>
+                <span class="text-xs font-semibold tracking-widest text-brand uppercase">Selected Works</span>
+                <h2 class="text-2xl sm:text-3xl font-bold mt-2 text-white">精选项目作品</h2>
+            </div>
+            <p class="text-sm text-zinc-500 max-w-xs">精选近年来在B端与C端核心主导的高质量项目，包含完整链路的设计思考。</p>
+        </div>
+
+        <!-- 网格布局：PC端3列，移动端1列 -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
+            <!-- 卡片 1 - UI/UX 智能后台 -->
+            <div class="group cursor-pointer">
+                <div class="aspect-[4/3] w-full rounded-2xl overflow-hidden bg-zinc-900 relative border border-zinc-800/80 mb-5">
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80" 
+                         alt="智能云数据分析工作台" 
+                         class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out" />
+                    <div class="absolute inset-0 bg-gradient-to-t from-zinc-950/40 via-transparent to-transparent"></div>
+                </div>
+                <div class="flex items-start justify-between">
+                    <div>
+                        <h3 class="text-base font-medium text-zinc-200 group-hover:text-brand transition-colors duration-200">智能云数据分析工作台</h3>
+                        <p class="text-xs text-zinc-500 mt-1.5">系统设计 · 效率提效</p>
+                    </div>
+                    <span class="text-xs font-mono px-2.5 py-1 rounded bg-zinc-900 text-zinc-400 border border-zinc-800">UI/UX</span>
+                </div>
+            </div>
+
+            <!-- 卡片 2 - 移动端 App -->
+            <div class="group cursor-pointer">
+                <div class="aspect-[4/3] w-full rounded-2xl overflow-hidden bg-zinc-900 relative border border-zinc-800/80 mb-5">
+                    <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=800&q=80" 
+                         alt="新一代数字探索App概念设计" 
+                         class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out" />
+                    <div class="absolute inset-0 bg-gradient-to-t from-zinc-950/40 via-transparent to-transparent"></div>
+                </div>
+                <div class="flex items-start justify-between">
+                    <div>
+                        <h3 class="text-base font-medium text-zinc-200 group-hover:text-brand transition-colors duration-200">新一代数字探索App概念设计</h3>
+                        <p class="text-xs text-zinc-500 mt-1.5">移动端体验 · 动效探索</p>
+                    </div>
+                    <span class="text-xs font-mono px-2.5 py-1 rounded bg-zinc-900 text-zinc-400 border border-zinc-800">UX/UI</span>
+                </div>
+            </div>
+
+            <!-- 卡片 3 - 3D 视觉空间 -->
+            <div class="group cursor-pointer">
+                <div class="aspect-[4/3] w-full rounded-2xl overflow-hidden bg-zinc-900 relative border border-zinc-800/80 mb-5">
+                    <img src="https://images.unsplash.com/photo-1634017839464-5c339ebe3cb4?auto=format&fit=crop&w=800&q=80" 
+                         alt="元宇宙虚拟交互空间 3D 设计" 
+                         class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out" />
+                    <div class="absolute inset-0 bg-gradient-to-t from-zinc-950/40 via-transparent to-transparent"></div>
+                </div>
+                <div class="flex items-start justify-between">
+                    <div>
+                        <h3 class="text-base font-medium text-zinc-200 group-hover:text-brand transition-colors duration-200">元宇宙虚拟交互空间 3D 设计</h3>
+                        <p class="text-xs text-zinc-500 mt-1.5">3D场景 · 视觉风格探索</p>
+                    </div>
+                    <span class="text-xs font-mono px-2.5 py-1 rounded bg-zinc-900 text-zinc-400 border border-zinc-800">3D Design</span>
+                </div>
+            </div>
+
+            <!-- 卡片 4 - B端复杂页面 -->
+            <div class="group cursor-pointer">
+                <div class="aspect-[4/3] w-full rounded-2xl overflow-hidden bg-zinc-900 relative border border-zinc-800/80 mb-5">
+                    <img src="https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&w=800&q=80" 
+                         alt="智行物流B端系统重构" 
+                         class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out" />
+                    <div class="absolute inset-0 bg-gradient-to-t from-zinc-950/40 via-transparent to-transparent"></div>
+                </div>
+                <div class="flex items-start justify-between">
+                    <div>
+                        <h3 class="text-base font-medium text-zinc-200 group-hover:text-brand transition-colors duration-200">智行物流B端系统重构</h3>
+                        <p class="text-xs text-zinc-500 mt-1.5">复杂系统 · 流程优化</p>
+                    </div>
+                    <span class="text-xs font-mono px-2.5 py-1 rounded bg-zinc-900 text-zinc-400 border border-zinc-800">UI/UX</span>
+                </div>
+            </div>
+
+            <!-- 卡片 5 - 动效与交互 -->
+            <div class="group cursor-pointer">
+                <div class="aspect-[4/3] w-full rounded-2xl overflow-hidden bg-zinc-900 relative border border-zinc-800/80 mb-5">
+                    <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=800&q=80" 
+                         alt="品牌年度官网动态交互升级" 
+                         class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out" />
+                    <div class="absolute inset-0 bg-gradient-to-t from-zinc-950/40 via-transparent to-transparent"></div>
+                </div>
+                <div class="flex items-start justify-between">
+                    <div>
+                        <h3 class="text-base font-medium text-zinc-200 group-hover:text-brand transition-colors duration-200">品牌年度官网动态交互升级</h3>
+                        <p class="text-xs text-zinc-500 mt-1.5">前端概念动效 · 动效系统</p>
+                    </div>
+                    <span class="text-xs font-mono px-2.5 py-1 rounded bg-zinc-900 text-zinc-400 border border-zinc-800">Motion</span>
+                </div>
+            </div>
+
+            <!-- 卡片 6 - 品牌视觉识别手册 -->
+            <div class="group cursor-pointer">
+                <div class="aspect-[4/3] w-full rounded-2xl overflow-hidden bg-zinc-900 relative border border-zinc-800/80 mb-5">
+                    <img src="https://images.unsplash.com/photo-1626785774573-4b799315345d?auto=format&fit=crop&w=800&q=80" 
+                         alt="“译设计”个人品牌视觉手册" 
+                         class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out" />
+                    <div class="absolute inset-0 bg-gradient-to-t from-zinc-950/40 via-transparent to-transparent"></div>
+                </div>
+                <div class="flex items-start justify-between">
+                    <div>
+                        <h3 class="text-base font-medium text-zinc-200 group-hover:text-brand transition-colors duration-200">“译设计”个人品牌视觉手册</h3>
+                        <p class="text-xs text-zinc-500 mt-1.5">视觉识别系统 · 规范制定</p>
+                    </div>
+                    <span class="text-xs font-mono px-2.5 py-1 rounded bg-zinc-900 text-zinc-400 border border-zinc-800">Brand</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. 快捷入口区 (三栏布局，精致简约) -->
+    <section class="py-24 border-t border-zinc-900 bg-zinc-950/20">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
+                <!-- 第一栏: 设计方法论 -->
+                <div id="methodology" class="p-8 rounded-2xl bg-zinc-900/40 border border-zinc-800/40 hover:border-brand/30 transition-all duration-300 flex flex-col justify-between h-[280px]">
+                    <div>
+                        <div class="w-10 h-10 rounded-lg bg-brand/10 flex items-center justify-center text-brand mb-6">
+                            <i data-lucide="book-open" class="w-5 h-5"></i>
+                        </div>
+                        <h3 class="text-lg font-medium text-white mb-3">设计方法论</h3>
+                        <p class="text-sm text-zinc-400 leading-relaxed">系统归纳实操案例背后的通用设计规范，让交互有章可循。</p>
+                    </div>
+                    <a href="#" class="inline-flex items-center gap-1.5 text-xs font-semibold text-brand hover:underline mt-4">
+                        前往阅读
+                        <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
+                    </a>
+                </div>
+
+                <!-- 第二栏: 设计资源 -->
+                <div id="resources" class="p-8 rounded-2xl bg-zinc-900/40 border border-zinc-800/40 hover:border-brand/30 transition-all duration-300 flex flex-col justify-between h-[280px]">
+                    <div>
+                        <div class="w-10 h-10 rounded-lg bg-brand/10 flex items-center justify-center text-brand mb-6">
+                            <i data-lucide="file-down" class="w-5 h-5"></i>
+                        </div>
+                        <h3 class="text-lg font-medium text-white mb-3">设计资源</h3>
+                        <p class="text-sm text-zinc-400 leading-relaxed">沉淀日常工作中积累的部分源文件素材与效率工具包共享。</p>
+                    </div>
+                    <a href="#" class="inline-flex items-center gap-1.5 text-xs font-semibold text-brand hover:underline mt-4">
+                        免费下载
+                        <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
+                    </a>
+                </div>
+
+                <!-- 第三栏: 关于我 -->
+                <div id="about" class="p-8 rounded-2xl bg-zinc-900/40 border border-zinc-800/40 hover:border-brand/30 transition-all duration-300 flex flex-col justify-between h-[280px]">
+                    <div>
+                        <div class="w-10 h-10 rounded-lg bg-brand/10 flex items-center justify-center text-brand mb-6">
+                            <i data-lucide="user" class="w-5 h-5"></i>
+                        </div>
+                        <h3 class="text-lg font-medium text-white mb-3">关于我</h3>
+                        <p class="text-sm text-zinc-400 leading-relaxed">了解我的设计历程、日常输入习惯以及更详细的个人履历。</p>
+                    </div>
+                    <a href="#" class="inline-flex items-center gap-1.5 text-xs font-semibold text-brand hover:underline mt-4">
+                        查看更多
+                        <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. 底部 CTA 区域 & 页脚 -->
+    <footer id="contact" class="border-t border-zinc-900 bg-zinc-950 pt-24 pb-12">
+        <div class="max-w-7xl mx-auto px-6">
+            <!-- CTA Area -->
+            <div class="text-center max-w-xl mx-auto mb-20">
+                <h2 class="text-3xl font-bold tracking-tight text-white mb-4">准备好开启下一个项目了吗？</h2>
+                <p class="text-sm text-zinc-400 leading-relaxed mb-8">
+                    无论是一起打造全新的体验，还是探讨设计落地的边界，都欢迎随时与我联系。
+                </p>
+                <a href="mailto:yourname@example.com" class="inline-flex items-center gap-2.5 px-6 py-3.5 rounded-full text-sm font-semibold bg-brand hover:bg-brand-dark text-white shadow-lg shadow-brand/20 transition-all duration-300">
+                    <i data-lucide="mail" class="w-4 h-4"></i>
+                    发送邮件联系我
+                </a>
+            </div>
+
+            <!-- Divider Line -->
+            <div class="border-t border-zinc-900 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
+                <div class="flex items-center gap-3">
+                    <div class="w-7 h-7 bg-brand rounded-md flex items-center justify-center">
+                        <span class="text-white font-extrabold text-sm italic tracking-tighter" style="font-family: 'Arial', sans-serif;">D</span>
+                    </div>
+                    <span class="text-xs text-zinc-500 font-medium">© 2026 彩云译设计. 保留所有权利。</span>
+                </div>
+                <div class="flex items-center gap-6">
+                    <a href="#" class="text-xs text-zinc-500 hover:text-brand transition-colors">微信</a>
+                    <a href="#" class="text-xs text-zinc-500 hover:text-brand transition-colors">Dribbble</a>
+                    <a href="#" class="text-xs text-zinc-500 hover:text-brand transition-colors">站酷</a>
+                    <a href="#" class="text-xs text-zinc-500 hover:text-brand transition-colors">Behance</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Initialize Lucide Icons -->
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
